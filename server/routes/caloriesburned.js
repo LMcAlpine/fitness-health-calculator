@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-// idealweight page route
+// caloriesburned page route
 router.get("/", function (req, res) {
-  res.send("idealweight page");
+  res.send("caloriesburned page");
 });
 
 module.exports = router;
