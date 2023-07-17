@@ -3,13 +3,15 @@ const calculateIdealWeight = function (gender, height) {
   const baseWeightFemaleKG = 45.5;
   const kgPerInch = 2.3;
 
-  let idealWeight = gender === "male" ? baseWeightMaleKG : baseWeightFemaleKG;
+  let idealWeight =
+    gender === "male"
+      ? kgPerInch * height.inches + baseWeightMaleKG
+      : gender === "female"
+      ? kgPerInch * height.inches + baseWeightFemaleKG
+      : (console.log("Invalid gender chosen"), null);
 
-  for (let inch = 0; inch < height.inches; inch++) {
-    idealWeight += kgPerInch;
-  }
   return idealWeight;
 };
 
-// console.log(calculateIdealWeight("male", { feet: 5, inches: 10 }));
+console.log(calculateIdealWeight("blah", { feet: 5, inches: 10 }));
 module.exports = calculateIdealWeight;
