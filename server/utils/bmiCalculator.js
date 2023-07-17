@@ -8,6 +8,10 @@ const convertFeetToInches = unitConverter.convertFeetToInches;
  * @returns {number} - The calculated BMI value.
  */
 const calculateBMI = function (weightInPounds, heightInFeet) {
+  if (weightInPounds <= 0 || heightInFeet <= 0) {
+    console.log("Weight and Height must be positive");
+    return;
+  }
   const conversionFactor = 703;
 
   const heightInInches = convertFeetToInches(heightInFeet);

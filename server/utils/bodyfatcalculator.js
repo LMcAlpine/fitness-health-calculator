@@ -1,6 +1,6 @@
 const unitConverter = require("./unitconverter.js");
 const convertInchesToCentimeters = unitConverter.convertInchesToCentimeters;
-console.log(convertInchesToCentimeters);
+const convertFeetToInches = unitConverter.convertFeetToInches;
 
 const calculateBodyFat = function (gender, height, waist, neck, hip = 0) {
   const coefficientA = 495;
@@ -16,7 +16,7 @@ const calculateBodyFat = function (gender, height, waist, neck, hip = 0) {
 
   let bodyFatPercentage;
 
-  const heightInInches = 12 * height;
+  const heightInInches = convertFeetToInches(height);
   const heightCentimeters = convertInchesToCentimeters(heightInInches);
   const waistCentimeters = convertInchesToCentimeters(waist);
 
@@ -44,4 +44,6 @@ const calculateBodyFat = function (gender, height, waist, neck, hip = 0) {
   return bodyFatPercentage;
 };
 
-console.log(calculateBodyFat("female", 5, 35, 23, 34));
+console.log(calculateBodyFat("maele", 5, 35, 23, 34));
+
+module.exports = calculateBodyFat;
