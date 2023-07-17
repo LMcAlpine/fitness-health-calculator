@@ -1,7 +1,28 @@
-function calculateBMI(height, weight) {
-  height *= 12;
+/**
+ * Convert Feet to Inches
+ * @param {number} feet
+ * @returns {number}
+ */
+function convertFeetToInches(feet) {
+  const inchesPerFoot = 12;
+  return feet * inchesPerFoot;
+}
+
+/**
+ * Calculates the Body Mass Index (BMI) based on weight and height.
+ * @param {number} weightInPounds - The weight in pounds
+ * @param {number} heightInFeet- The height in feet.
+ * @returns {number} - The calculated BMI value.
+ */
+const calculateBMI = function (weightInPounds, heightInFeet) {
   const conversionFactor = 703;
-  const bmi = parseFloat(((weight / height ** 2) * conversionFactor).toFixed(1));
+
+  const heightInInches = convertFeetToInches(heightInFeet);
+
+  const bmi = (
+    (weightInPounds / heightInInches ** 2) *
+    conversionFactor
+  ).toFixed(1);
   if (bmi < 18.5) {
     console.log(`Your BMI is ${bmi}, you are underweight.`);
   } else if (bmi >= 18.5 && bmi <= 24.9) {
@@ -11,11 +32,7 @@ function calculateBMI(height, weight) {
   } else {
     console.log(`Your BMI is ${bmi}, you are  obese.`);
   }
-  return bmi;
-}
+  return parseFloat(bmi);
+};
 
-// Example usage:
-const height = 5; // height in feet
-const weight = 100; // weight in pounds
-const result = calculateBMI(height, weight);
-console.log(result);
+module.exports = calculateBMI;
