@@ -1,12 +1,5 @@
-/**
- * Convert Feet to Inches
- * @param {number} feet
- * @returns {number}
- */
-function convertFeetToInches(feet) {
-  const inchesPerFoot = 12;
-  return feet * inchesPerFoot;
-}
+const unitConverter = require("./unitconverter.js");
+const convertFeetToInches = unitConverter.convertFeetToInches;
 
 /**
  * Calculates the Body Mass Index (BMI) based on weight and height.

@@ -1,8 +1,6 @@
-function convertInchesToCentimeters(inches) {
-  const centimetersPerInch = 2.54;
-  const centimeters = inches * centimetersPerInch;
-  return centimeters;
-}
+const unitConverter = require("./unitconverter.js");
+const convertInchesToCentimeters = unitConverter.convertInchesToCentimeters;
+console.log(convertInchesToCentimeters);
 
 const calculateBodyFat = function (gender, height, waist, neck, hip = 0) {
   const coefficientA = 495;
