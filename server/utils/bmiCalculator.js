@@ -32,4 +32,4 @@ const calculateBMI = function (weightInPounds, heightInFeet) {
   return parseFloat(bmi);
 };
 
-module.exports = calculateBMI;
+module.exports = { calculateBMI };
