@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const port = 3000;
 
 const bmi = require("./routes/bmi.js");
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+app.use(cors());
 app.use("/bmi", bmi);
 app.use("/bodyfat", bodyfat);
 app.use("/idealweight", idealweight);
