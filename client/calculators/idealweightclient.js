@@ -24,9 +24,20 @@ async function calculateIdealWeight(genderInput, heightInput) {
 
   if (!response.ok) {
     console.log("Error: Failed to fetch ideal weight data");
+    const data = await response.json();
+    showError(data.error);
     return;
   }
 
   const data = await response.json();
   document.getElementById("idealweight-result-container").innerText = `${data}`;
+}
+function showError(errorMessage) {
+  const errorContainer = document.getElementById("error-container");
+  errorContainer.innerText = errorMessage;
+  errorContainer.style.color = "red";
+  errorContainer.style.fontWeight = "bold";
+  errorContainer.style.marginTop = "10px";
+  errorContainer.style.marginBottom = "10px";
+  errorContainer.style.display = "block";
 }

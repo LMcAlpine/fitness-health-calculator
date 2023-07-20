@@ -26,12 +26,19 @@ caloriesburnedForm.addEventListener("submit", function (event) {
  * @returns {Promise<void>} - A promise that resolves after fetching and displaying the calories burned result.
  */
 async function catchCaloriesBurned(activityInput, durationInput, weightInput) {
+  if (durationInput <= 0 || weightInput < 0) {
+    showError(`Values must be positive `);
+    return;
+  }
+
   const response = await fetch(
     `http://localhost:3000/caloriesburned?activity=${activityInput}&duration=${durationInput}&weight=${weightInput}`
   );
 
   if (!response.ok) {
-    console.log("Error: Failed to fetch BMI data");
+    console.log("Error: Failed to fetch Calories Burned data");
+    const data = await response.json();
+    showError(data.error);
     return;
   }
 
@@ -40,4 +47,13 @@ async function catchCaloriesBurned(activityInput, durationInput, weightInput) {
   document.getElementById(
     "caloriesburned-result-container"
   ).innerText = `${data}`;
+}
+function showError(errorMessage) {
+  const errorContainer = document.getElementById("error-container");
+  errorContainer.innerText = errorMessage;
+  errorContainer.style.color = "red";
+  errorContainer.style.fontWeight = "bold";
+  errorContainer.style.marginTop = "10px";
+  errorContainer.style.marginBottom = "10px";
+  errorContainer.style.display = "block";
 }
