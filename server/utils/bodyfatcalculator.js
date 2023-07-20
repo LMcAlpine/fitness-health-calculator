@@ -44,6 +44,6 @@ const calculateBodyFat = function (gender, height, waist, neck, hip = 0) {
   return bodyFatPercentage;
 };
 
-console.log(calculateBodyFat("maele", 5, 35, 23, 34));
+console.log(calculateBodyFat("male", 5, 35, 23, 34));
 
 module.exports = calculateBodyFat;
