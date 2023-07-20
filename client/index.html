@@ -39,6 +39,18 @@
             >Body Fat Calculator</a
           >
         </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            id="caloriesburned-tab"
+            data-toggle="tab"
+            href="#caloriesburned"
+            role="tab"
+            aria-controls="caloriesburned"
+            aria-selected="false"
+            >Calories Burned Calculator</a
+          >
+        </li>
       </ul>
 
       <div class="tab-content mt-4" id="myTabContent">
@@ -133,6 +145,51 @@
 
           <div id="bodyfat-result-container" class="mt-4"></div>
         </div>
+
+        <div
+          class="tab-pane fade"
+          id="caloriesburned"
+          role="tabpanel"
+          aria-labelledby="caloriesburned-tab"
+        >
+          <form id="caloriesburned-form">
+            <div class="form-group">
+              <label for="activity-input">Activity:</label>
+              <select class="form-control" id="activity-input" required>
+                <option value="">Select Activity</option>
+                <option value="light">Light Intensity</option>
+                <option value="moderate">Moderate Intensity</option>
+                <option value="vigorous">Vigorous Intensity</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="duration-input">Duration (in minutes):</label>
+              <input
+                type="text"
+                class="form-control"
+                id="duration-input-caloriesburned"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="weight-input">Weight:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="weight-input-caloriesburned"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Calculate Calories Burned
+            </button>
+          </form>
+
+          <div id="caloriesburned-result-container" class="mt-4"></div>
+        </div>
       </div>
     </div>
 
@@ -140,6 +197,7 @@
 
     <script src="./calculators/bmiclient.js"></script>
     <script src="./calculators/bodyfatclient.js"></script>
+    <script src="./calculators/caloriesburnedclient.js"></script>
     <script src="./utils/tabcontroller.js"></script>
     <script src="./utils/genderutils.js"></script>
   </body>

@@ -4,6 +4,9 @@ const readline = require("readline").createInterface({
 });
 
 const calculateCaloriesBurned = function (activity, duration, weight) {
+  const kgConversion = 0.453592;
+  weight *= kgConversion;
+
   // MET = metabolic equivalent of a task
   const baseMET = 3.5; // 3.5 mL of oxygen per kilogram per minute, MET value of 1.0
   const metValues = {
@@ -13,11 +16,11 @@ const calculateCaloriesBurned = function (activity, duration, weight) {
   };
 
   const chosenIntensity =
-    activity == 1
+    activity === "light"
       ? metValues.lightIntensity
-      : activity == 2
+      : activity === "moderate"
       ? metValues.moderateIntensity
-      : activity == 3
+      : activity === "vigorous"
       ? metValues.vigorousIntensity
       : baseMET;
 
@@ -31,6 +34,7 @@ const calculateCaloriesBurned = function (activity, duration, weight) {
   // duration should be in minutes, weight should be in kilograms
   const caloriesBurned = (duration * chosenIntensity * baseMET * weight) / 200;
   console.log(caloriesBurned);
+  return caloriesBurned;
 };
 
 function promptActivityType() {
@@ -51,4 +55,5 @@ function promptActivityType() {
   );
 }
 
-promptActivityType();
+//promptActivityType();
+module.exports = calculateCaloriesBurned;
