@@ -24,13 +24,8 @@ const calculateCaloriesBurned = function (activity, duration, weight) {
       ? metValues.vigorousIntensity
       : baseMET;
 
-  console.log(chosenIntensity);
+  // console.log(chosenIntensity);
 
-  // const activityTypes = {
-  //   // cardio: { walking, running, cycling, swimming },
-  //   gymActivity: "Gym Activity",
-  //   training,
-  // };
   // duration should be in minutes, weight should be in kilograms
   const caloriesBurned = (duration * chosenIntensity * baseMET * weight) / 200;
   console.log(caloriesBurned);
