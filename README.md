@@ -19,6 +19,8 @@ The BMI Calculator API is a RESTful API that allows users to calculate their Bod
 
 ## Installation and Setup
 
+https://github.com/LMcAlpine/fitness-health-calculator.git
+
 1. Clone the repository to your local machine.
 2. Install Node.js and npm if you haven't already.
 3. Run `npm install` in the project root to install the required dependencies.
