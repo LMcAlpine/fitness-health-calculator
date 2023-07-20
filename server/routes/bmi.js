@@ -4,10 +4,7 @@ const bmiCalculator = require("../utils/bmiCalculator.js");
 console.log(bmiCalculator);
 
 // bmi page route
-
-//
 router.get("/", function (req, res) {
-  //console.log("hello");
   const weight = parseFloat(req.query.weight);
   let height = req.query.height;
   const heightPattern = /^(\d+)'\s*(\d+)"$/;
@@ -21,15 +18,10 @@ router.get("/", function (req, res) {
   const inches = parseInt(match[2]);
 
   height = { feet, inches };
-  console.log("height: " + height);
 
   const bmi = bmiCalculator.calculateBMI(weight, height);
-  console.log("bmi: " + bmi.bmiValue);
-  res.json(`You're BMI value is ${bmi.bmiValue}, you are ${bmi.category}`);
-  console.log(weight);
-  console.log(height);
 
-  // res.send("bmi page");
+  res.json(`You're BMI value is ${bmi.bmiValue}, you are ${bmi.category}`);
 });
 
 module.exports = router;

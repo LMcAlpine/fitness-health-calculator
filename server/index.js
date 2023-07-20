@@ -8,11 +8,6 @@ const bodyfat = require("./routes/bodyfat.js");
 const idealweight = require("./routes/idealweight.js");
 const caloriesburned = require("./routes/caloriesburned.js");
 
-// route definition
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 app.use(cors());
 app.use("/bmi", bmi);
 app.use("/bodyfat", bodyfat);

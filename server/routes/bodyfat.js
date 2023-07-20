@@ -4,10 +4,6 @@ const bodyFatCalculator = require("../utils/bodyfatcalculator.js");
 
 // bodyfat page route
 router.get("/", function (req, res) {
-  //res.send("bodyfat page");
-
-  // const weight = parseFloat(req.query.weight);\
-
   const gender = req.query.gender;
 
   let height = req.query.height;
@@ -28,17 +24,8 @@ router.get("/", function (req, res) {
   const neck = req.query.neck;
   const hip = req.query.hip;
 
-  console.log("waist " + waist);
-  console.log("neck " + neck);
-  console.log("hip " + hip);
-
   const bodyfat = bodyFatCalculator(gender, height, waist, neck, hip);
   res.json(bodyfat);
-  //const bmi = bmiCalculator.calculateBMI(weight, height);
-  // console.log("bmi: " + bmi.bmiValue);
-  //res.json(`You're BMI value is ${bmi.bmiValue}, you are ${bmi.category}`);
-  //console.log(weight);
-  //console.log(height);
 });
 
 module.exports = router;
