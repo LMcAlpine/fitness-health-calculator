@@ -37,16 +37,33 @@ async function catchBodyFat(
   neckInput,
   hipInput
 ) {
+  if (heightInput <= 0 || waistInput < 0 || neckInput < 0 || hipInput < 0) {
+    // console.log("Weight and Height must be positive");
+    showError(`Values must be positive `);
+    return;
+  }
+
   const response = await fetch(
     `http://localhost:3000/bodyfat?gender=${genderInput}&height=${heightInput}&waist=${waistInput}&neck=${neckInput}&hip=${hipInput}`
   );
 
   if (!response.ok) {
     console.log("Error: Failed to fetch Body Fat data");
+    const data = await response.json();
+    showError(data.error);
     return;
   }
 
   const data = await response.json();
 
   document.getElementById("bodyfat-result-container").innerText = `${data}`;
+}
+function showError(errorMessage) {
+  const errorContainer = document.getElementById("error-container");
+  errorContainer.innerText = errorMessage;
+  errorContainer.style.color = "red";
+  errorContainer.style.fontWeight = "bold";
+  errorContainer.style.marginTop = "10px";
+  errorContainer.style.marginBottom = "10px";
+  errorContainer.style.display = "block";
 }

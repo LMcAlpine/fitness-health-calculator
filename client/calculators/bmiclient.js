@@ -21,6 +21,13 @@ bmiForm.addEventListener("submit", function (event) {
  * @param {string} heightInput - The height input value.
  */
 async function catchBMI(weightInput, heightInput) {
+
+  if (weightInput <= 0 || heightInput <= 0) {
+    console.log("Weight and Height must be positive");
+    showError("Weight and Height must be positive")
+    return;
+  }
+
   const response = await fetch(
     `http://localhost:3000/bmi?weight=${weightInput}&height=${heightInput}`
   );
