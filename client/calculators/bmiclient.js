@@ -3,8 +3,7 @@ bmiForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const weightInput = document.querySelector("#weight-input");
   const heightInput = document.querySelector("#height-input");
-  //   console.log(weightInput.value);
-  //   console.log(heightInput.value);
+
   catchBMI(weightInput.value, heightInput.value);
 });
 
@@ -20,7 +19,6 @@ async function catchBMI(weightInput, heightInput) {
   }
 
   const data = await response.json();
-  // console.log(data);
+
   document.getElementById("bmi-result-container").innerText = `${data}`;
-  //console.log(response);
 }

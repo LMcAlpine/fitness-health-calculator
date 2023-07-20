@@ -41,7 +41,7 @@ const calculateBMI = function (weightInPounds, heightInFeet) {
     console.log(`Your BMI is ${bmi}, you are obese.`);
     bmiCategory = setBMIObject(bmiCategory, bmi, "obese");
   }
-  // return parseFloat(bmi);
+
   return bmiCategory;
 };
 

@@ -7,12 +7,6 @@ caloriesburnedForm.addEventListener("submit", function (event) {
   );
   const weightInput = document.querySelector("#weight-input-caloriesburned");
 
-  console.log("HERE");
-  //   console.log(weightInput.value);
-  //   console.log(heightInput.value);
-
-  console.log(activityInput.value);
-
   catchCaloriesBurned(
     activityInput.value,
     durationInput.value,
@@ -32,9 +26,8 @@ async function catchCaloriesBurned(activityInput, durationInput, weightInput) {
   }
 
   const data = await response.json();
-  // console.log(data);
+
   document.getElementById(
     "caloriesburned-result-container"
   ).innerText = `${data}`;
-  //console.log(response);
 }

@@ -13,5 +13,4 @@ const calculateIdealWeight = function (gender, height) {
   return idealWeight;
 };
 
-//console.log(calculateIdealWeight("blah", { feet: 5, inches: 10 }));
 module.exports = calculateIdealWeight;

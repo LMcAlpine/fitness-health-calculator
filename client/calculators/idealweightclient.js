@@ -4,9 +4,6 @@ idealWeightForm.addEventListener("submit", function (event) {
   const genderInput = document.querySelector("#gender-input-idealweight");
   const heightInput = document.querySelector("#height-input-idealweight");
 
-  console.log(genderInput.value);
-  console.log(heightInput.value);
-
   calculateIdealWeight(genderInput.value, heightInput.value);
 });
 
