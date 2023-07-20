@@ -7,7 +7,7 @@ console.log(bmiCalculator);
 
 //
 router.get("/", function (req, res) {
-  console.log("hello");
+  //console.log("hello");
   const weight = parseFloat(req.query.weight);
   let height = req.query.height;
   const heightPattern = /^(\d+)'\s*(\d+)"$/;

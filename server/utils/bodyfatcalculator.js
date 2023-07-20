@@ -16,7 +16,7 @@ const calculateBodyFat = function (gender, height, waist, neck, hip = 0) {
 
   let bodyFatPercentage;
 
-  const heightInInches = convertFeetToInches(height);
+  const heightInInches = convertFeetToInches(height.feet) + height.inches;
   const heightCentimeters = convertInchesToCentimeters(heightInInches);
   const waistCentimeters = convertInchesToCentimeters(waist);
 
