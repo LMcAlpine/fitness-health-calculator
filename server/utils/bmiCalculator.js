@@ -1,8 +1,6 @@
 const unitConverter = require("./unitconverter.js");
 const convertFeetToInches = unitConverter.convertFeetToInches;
 
-//http://localhost:3000/bmi?weight=70&height=1.75
-
 /**
  * Calculates the Body Mass Index (BMI) based on weight and height.
  * @param {number} weightInPounds - The weight in pounds

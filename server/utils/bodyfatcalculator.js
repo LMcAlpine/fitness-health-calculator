@@ -2,6 +2,17 @@ const unitConverter = require("./unitconverter.js");
 const convertInchesToCentimeters = unitConverter.convertInchesToCentimeters;
 const convertFeetToInches = unitConverter.convertFeetToInches;
 
+/**
+ * Calculates the body fat percentage based on the given parameters.
+ * @param {string} gender - The gender ("male" or "female") to calculate the body fat for.
+ * @param {object} height - The height object with "feet" and "inches" properties.
+ * @param {number} waist - The waist measurement (in inches).
+ * @param {number} neck - The neck measurement (in inches).
+ * @param {number} [hip=0] - The hip measurement (in inches) for females (optional).
+ * @returns {number} - The calculated body fat percentage.
+ * @throws {Error} - Throws an error if an unsupported gender is provided.
+ */
+
 const calculateBodyFat = function (gender, height, waist, neck, hip = 0) {
   const coefficientA = 495;
   const coefficientB = 450;

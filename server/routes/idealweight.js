@@ -21,7 +21,7 @@ router.get("/", function (req, res) {
 
   const idealWeight = idealWeightCalculator(gender, height);
 
-  res.json(idealWeight);
+  res.json(`Your ideal weight is ${idealWeight.toFixed(2)} pounds.`);
 });
 
 module.exports = router;
