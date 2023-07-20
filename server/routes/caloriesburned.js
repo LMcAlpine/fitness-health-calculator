@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
   const weight = req.query.weight;
 
   const caloriesBurned = caloriesBurnedCalculator(activity, duration, weight);
-  res.json(caloriesBurned);
+  res.json(`You burned approximately ${caloriesBurned.toFixed(2)} calories.`);
 });
 
 module.exports = router;

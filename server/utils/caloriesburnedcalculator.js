@@ -1,8 +1,10 @@
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
+/**
+ * Calculates the approximate number of calories burned during a physical activity.
+ * @param {string} activity - The activity intensity ("light", "moderate", "vigorous").
+ * @param {number} duration - The duration of the activity in minutes.
+ * @param {number} weight - The weight of the person engaging in the activity (in pounds).
+ * @returns {number} - The calculated number of calories burned.
+ */
 const calculateCaloriesBurned = function (activity, duration, weight) {
   const kgConversion = 0.453592;
   weight *= kgConversion;

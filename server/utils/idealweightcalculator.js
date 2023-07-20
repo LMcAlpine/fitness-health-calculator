@@ -1,3 +1,9 @@
+/**
+ * Calculates the ideal weight based on the gender and height.
+ * @param {string} gender - The gender ("male" or "female") to calculate the ideal weight for.
+ * @param {object} height - The height object with "feet" and "inches" properties.
+ * @returns {number} - The calculated ideal weight in pounds.
+ */
 const calculateIdealWeight = function (gender, height) {
   const baseWeightMaleKG = 50;
   const baseWeightFemaleKG = 45.5;

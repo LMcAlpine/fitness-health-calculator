@@ -25,7 +25,7 @@ router.get("/", function (req, res) {
   const hip = req.query.hip;
 
   const bodyfat = bodyFatCalculator(gender, height, waist, neck, hip);
-  res.json(bodyfat);
+  res.json(`Your body fat percentage is ${bodyfat.toFixed(0)}%.`);
 });
 
 module.exports = router;

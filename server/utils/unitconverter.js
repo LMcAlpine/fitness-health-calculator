@@ -1,3 +1,8 @@
+/**
+ * Converts inches to centimeters.
+ * @param {number} inches - The length in inches.
+ * @returns {number} - The length in centimeters.
+ */
 function convertInchesToCentimeters(inches) {
   const centimetersPerInch = 2.54;
   const centimeters = inches * centimetersPerInch;

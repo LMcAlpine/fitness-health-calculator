@@ -1,4 +1,8 @@
 const bodyfatForm = document.querySelector("#bodyfat-form");
+/**
+ * Adds an event listener to the body fat form for the "submit" event.
+ * When the form is submitted, it calculates and displays the body fat result.
+ */
 bodyfatForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const genderInput = document.querySelector("#gender-input");
@@ -16,6 +20,16 @@ bodyfatForm.addEventListener("submit", function (event) {
   );
 });
 
+/**
+ * Asynchronously fetches the body fat data and displays the result.
+ * @param {string} genderInput - The gender input value (e.g., "male" or "female").
+ * @param {string} heightInput - The height input value.
+ * @param {string} waistInput - The waist input value.
+ * @param {string} neckInput - The neck input value.
+ * @param {string} hipInput - The hip input value.
+ * @returns {Promise<void>} - A promise that resolves after fetching and displaying the body fat result.
+ */
+
 async function catchBodyFat(
   genderInput,
   heightInput,
@@ -28,7 +42,6 @@ async function catchBodyFat(
   );
 
   if (!response.ok) {
-    // Handle the error here, e.g., show an error message to the user
     console.log("Error: Failed to fetch Body Fat data");
     return;
   }

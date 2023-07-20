@@ -1,8 +1,12 @@
+/**
+ * Shows the calculator with the specified ID and sets the corresponding tab link as active.
+ * @param {string} calculatorId - The ID of the calculator content to show.
+ * @param {string} tabLinkId - The ID of the corresponding tab link to set as active.
+ */
 function showCalculator(calculatorId, tabLinkId) {
   const calculatorContent = document.querySelector(calculatorId);
   calculatorContent.classList.add("show", "active");
 
-  // Hide other calculator contents
   const otherCalculators = document.querySelectorAll(".tab-pane");
   otherCalculators.forEach((calculator) => {
     if (calculator !== calculatorContent) {
@@ -10,14 +14,12 @@ function showCalculator(calculatorId, tabLinkId) {
     }
   });
 
-  // Update active tab classes
   const tabLinks = document.querySelectorAll(".nav-link");
   tabLinks.forEach((link) => {
     link.classList.toggle("active", link.id === tabLinkId);
   });
 }
 
-// Event listeners for tab links
 const bmiTabLink = document.querySelector("#bmi-tab");
 bmiTabLink.addEventListener("click", function (event) {
   event.preventDefault();
@@ -42,5 +44,4 @@ idealWeightTabLink.addEventListener("click", function (event) {
   showCalculator("#idealweight", "idealweight-tab");
 });
 
-// Initially show the BMI Calculator content and set the active tab
 showCalculator("#bmi", "bmi-tab");

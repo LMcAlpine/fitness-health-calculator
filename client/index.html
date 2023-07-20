@@ -260,34 +260,11 @@
       </div>
     </div>
 
-    <!-- Inside the <header> or <div> with class "navbar" -->
     <div class="dark-mode-switch" id="dark-mode-switch">
       <button class="toggle-button">Dark Mode</button>
     </div>
 
-    <!-- Example slider for height input -->
-    <label for="height-slider">Height (in feet):</label>
-    <input
-      type="range"
-      id="height-slider"
-      min="4"
-      max="7"
-      step="0.1"
-      value="5"
-    />
-    <p id="height-display">5 feet</p>
-
-    <!-- Example slider for weight input -->
-    <label for="weight-slider">Weight (in pounds):</label>
-    <input
-      type="range"
-      id="weight-slider"
-      min="80"
-      max="300"
-      step="1"
-      value="150"
-    />
-    <p id="weight-display">150 pounds</p>
+    <div id="error-container"></div>
 
     <script src="./calculators/bmiclient.js"></script>
     <script src="./calculators/bodyfatclient.js"></script>
