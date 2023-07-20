@@ -10,7 +10,7 @@ const calculateIdealWeight = function (gender, height) {
       ? kgPerInch * height.inches + baseWeightFemaleKG
       : (console.log("Invalid gender chosen"), null);
 
-  return idealWeight;
+  return idealWeight * 2.20462;
 };
 
 module.exports = calculateIdealWeight;

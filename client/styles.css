@@ -1,54 +1,148 @@
-/* Custom styles */
+:root {
+  /* Light mode colors */
+  --background-light: #f0f0f0;
+  --text-light: #333;
+  --form-box-background-light: #fff;
+  --form-box-text-light: #333;
+  --current-tab-background: #007bff;
+  --current-tab-text: #fff;
+  --primary-color: #007bff;
+  --primary-hover-color: #0056b3;
+
+  /* Dark mode colors */
+  --background-dark: #333;
+  --text-dark: #f0f0f0;
+  --form-box-background-dark: #444;
+  --form-box-text-dark: #f0f0f0;
+  --select-background-dark: #333;
+  --select-text-dark: #f0f0f0;
+  --select-border-dark: 1px solid #666;
+}
+
+/* Common styles for both light and dark modes */
 body {
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  form {
-    margin: 20px auto;
-    max-width: 400px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="number"],
-  input[type="string"] {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  #result-container {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
+  padding: 20px;
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--form-box-background-light);
+  color: var(--form-box-text-light);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--form-box-background-light);
+  color: var(--form-box-text-light);
+  outline: none; /* Remove the default focus outline */
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.result-card {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--form-box-background-light);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: var(--form-box-text-light);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.dark-mode-switch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.toggle-button {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dark-mode .toggle-button {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.nav-item .nav-link.active {
+  background-color: var(--current-tab-background);
+  color: var(--current-tab-text);
+}
+
+/* Dark mode specific styles */
+body.dark-mode form {
+  background-color: var(--form-box-background-dark);
+  color: var(--form-box-text-dark);
+}
+
+body.dark-mode input[type="number"],
+body.dark-mode input[type="text"] {
+  background-color: var(--form-box-background-dark);
+  color: var(--form-box-text-dark);
+}
+
+body.dark-mode .result-card {
+  background-color: var(--form-box-background-dark);
+  color: var(--form-box-text-dark);
+}
+
+body.dark-mode select {
+  background-color: var(--select-background-dark);
+  color: var(--select-text-dark);
+  border: var(--select-border-dark);
+}
+
+body.dark-mode option {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode select:focus {
+  background-color: #333;
+  color: #f0f0f0;
+}
